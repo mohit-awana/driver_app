@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap.min.css')}}">
+</head>
+
+<style>
+    #main-wrapper{
+    display:flex;
+    }
+    
+    #main-wrapper > .row{
+    
+    flex-direction: column;
+      margin: 0 auto;
+      width: 500px;}
+
+      .btn-secondary{
+	    background-color: #f58245;
+		color: white;
+	}
+
+	.btn-secondary:hover{
+		background-color: white;
+    color: #f58245;
+  }
+  
+  .navbar-custom { 
+    background-color: #0B58A6; 
+} 
+.navbar-custom .navbar-brand, 
+        .navbar-custom .navbar-text { 
+            color: white; 
+        }
+    
+</style>
+<body class>
+  <nav class="navbar navbar-custom" style="margin-top:10px;margin-left:0;margin-right:0;margin-bottom: 0;">
+    <div class="adt-logo"><div class="fusion-logo" data-margin-top="0px" data-margin-bottom="0px" data-margin-left="0px" data-margin-right="0px">
+      <a class="fusion-logo-link" href="https://www.absolutdata.com/">
+      <img src="https://www.absolutdata.com/wp-content/uploads/2018/09/Absolutdata-Color-Logo-Small-300x200.png" width = "200" height = "100" srcset="https://www.absolutdata.com/wp-content/uploads/2018/09/Absolutdata-Color-Logo-Small-300x200.png 1x" width="" height="" alt="Absolutdata Logo" retina_logo_url="" class="fusion-standard-logo">
+      </a></div></div>
+          <div class="row">
+          <a class="navbar-brand"> </a>
+          </div>
+        <form action = "{{url_for('vid_frame')}}">
+        <button class="btn btn-outline-secondary btn-secondary my-2 my-sm-0" type="submit">Click to convert video again</button>
+        </form>
+        <form action = "{{url_for('distraction_pred_index')}}">
+        <button class="btn btn-outline-secondary btn-secondary my-2 my-sm-0" type="submit">Click to predict alertness of a driver</button>
+        </form>
+        <form action = "/">
+        <button class="btn btn-outline-secondary btn-secondary my-2 my-sm-0" type="submit">Home</button>
+        </form>
+        </div>
+</nav>
+    <div id="main-wrapper" style = "font-family:Arial, Helvetica, sans-serif;">
+        <p style="margin-bottom:2cm;"></p>
+        <div class="container">
+        <div class="">
+            <div class="page-header">
+              <div class="col-lg-8 col-md-7 col-sm-6">
+                <p class="lead" style="font-weight: bold;">Result </p>
+              </div>
+              </div>
+            <div class="bs-component">
+              <table class="table table-hover">
+                  <tr class="table-active"style="background-color:#0B58A6; color: white;">
+                    <th scope="col"> </th>
+                    <th scope="col">Snapshot of frames created</th>
+                    <th scope="col"> </th>
+
+                    <th scope="col">Save Location</th>
+                  </tr>
+                  <tr>
+                      <th scope="row"> <img width="224" height="224" src="{{ imagesrc }}"> </th>
+                      <th scope="row"> <img width="224" height="224" src="{{ secondsnap }}" > </th>
+                      <th scope="row"> <img width="224" height="224" src="{{ thirdsnap }}" > </th>
+                      <td> {{label}} </td>
+                    </tr>
+              </table>
+        </div>
+      </div>
+        </div>
+      </div>
+    </body>

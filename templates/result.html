@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{url_for('static',filename='bootstrap.min.css')}}">
+  <title>Driver Alertness System</title>
+  <style>
+  #main-wrapper{
+      display: flex;
+    background-color: #f6faff;
+    height: 100vh;
+	}
+  
+  #main-wrapper > .row{
+  
+  flex-direction: column;
+    margin: 0 auto;
+	width: 500px;}
+
+	.btn-secondary{
+	    background-color: #f58245;
+		color: white;
+	}
+
+	.btn-secondary:hover{
+		background-color: white;
+		color: #f58245;
+	}
+
+	.container{
+		padding: 24px 0;
+	}
+
+	.container .page-header{
+	    padding-bottom: 16px;
+	}
+  .navbar-custom { 
+    background-color: #0B58A6; 
+} 
+.navbar-custom .navbar-brand, 
+        .navbar-custom .navbar-text { 
+            color: white; 
+        } 
+  </style>
+  <body >
+    <nav class="navbar navbar-custom" style="margin-top:10px;margin-left:0;margin-right:0;margin-bottom: 0;">
+      <div class="adt-logo"><div class="fusion-logo" data-margin-top="0px" data-margin-bottom="0px" data-margin-left="0px" data-margin-right="0px">
+        <a class="fusion-logo-link" href="https://www.absolutdata.com/">
+        <img src="https://www.absolutdata.com/wp-content/uploads/2018/09/Absolutdata-Color-Logo-Small-300x200.png" width = "200" height = "100" srcset="https://www.absolutdata.com/wp-content/uploads/2018/09/Absolutdata-Color-Logo-Small-300x200.png 1x" width="" height="" alt="Absolutdata Logo" retina_logo_url="" class="fusion-standard-logo">
+        </a></div></div>
+      <form action = "/">
+        <button class="btn btn-outline-secondary btn-secondary my-2 my-sm-0" type="submit">Home</button>
+        </form>
+      </div>
+  </nav>
+	<div id="main-wrapper">
+    <p style="margin-bottom:2cm;"></p>
+    <div class="container">
+        <div class="">
+          <div class="page-header">
+            <div class="col-lg-8 col-md-7 col-sm-6">
+              <p class="lead" style="font-weight: bold;">Result </p>
+            </div>
+          </div>
+          <div class="bs-component">
+            <table class="table table-bordered">
+                <tr class="table-active" style="background-color:#0B58A6; color: white;">
+                  <th scope="col">Image </th>
+                  <th scope="col">Prediction</th>
+                </tr>
+                <tr>
+                    <th scope="row" style="width: 220px;"> <img width="224" height="224" src="{{imagesource}}" /> </th>
+                    <td> {{label}} </td>
+                  </tr>
+            </table>
+		</div>
+	</div>
+      </div>
+	</div>
+  </body>

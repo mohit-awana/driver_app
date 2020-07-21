@@ -1,0 +1,105 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap.min.css')}}">
+</head>
+
+<style>
+    #main-wrapper{
+    display:flex;
+    }
+    
+    #main-wrapper > .row{
+    
+    flex-direction: column;
+      margin: 0 auto;
+      width: 500px;}
+
+      .border-input{
+      	border: 1px solid #ddd;
+      	color: white;
+      	font-style: normal;
+      	font-size: 16px;
+      	margin: 16px 0;
+      }
+
+      .btn{
+    max-width: 320px;
+    background-color: #0B58A6;
+  }
+
+      .upload-input-wrapper{
+      	display: flex;
+      	margin: 16px 0;
+      	min-width: 320px;
+      	min-height: 32px;
+      	flex-direction: column;
+      	border-radius: 4px;
+
+      }
+
+      .upload-input-wrapper .btn{ 
+      	margin-right: 16px;
+  		}
+      .btn-secondary{
+	    background-color: #f58245;
+		color: white;
+	}
+
+	.btn-secondary:hover{
+		background-color: white;
+		color: #f58245;
+  }
+  .navbar-custom { 
+    background-color: #0B58A6; 
+} 
+.navbar-custom .navbar-brand, 
+        .navbar-custom .navbar-text { 
+            color: white; 
+        } 
+    
+    </style>
+    <body class>
+        <nav class="navbar navbar-custom" style="margin-top:10px;margin-left:0;margin-right:0;margin-bottom: 0;">
+          <div class="adt-logo"><div class="fusion-logo" data-margin-top="0px" data-margin-bottom="0px" data-margin-left="0px" data-margin-right="0px">
+            <a class="fusion-logo-link" href="https://www.absolutdata.com/">
+            <img src="https://www.absolutdata.com/wp-content/uploads/2018/09/Absolutdata-Color-Logo-Small-300x200.png" width = "200" height = "100" srcset="https://www.absolutdata.com/wp-content/uploads/2018/09/Absolutdata-Color-Logo-Small-300x200.png 1x" width="" height="" alt="Absolutdata Logo" retina_logo_url="" class="fusion-standard-logo">
+            </a></div></div>
+              <div class="row">
+              <a class="navbar-brand"> 
+            </a>
+          </div>
+              <form action = "/">
+                <button class="btn btn-outline-secondary btn-secondary my-2 my-sm-0" type="submit">Home</button>
+                </form>
+              </div>
+      </nav>
+      <div id="main-wrapper" style = "font-family:Arial, Helvetica, sans-serif;">
+      <div class="container">	
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div class="col-lg-8 col-md-7 col-sm-6">
+            <p class="lead" style="font-weight: bold;">Upload a video! </p>
+          </div>
+        </div>
+        <form action="{{url_for('vid_frame_con')}}" method="post" enctype="multipart/form-data">
+        	<div class="upload-input-wrapper">
+        		<input type=file name=file class="choose-file">
+
+        		<label class="">
+        			Select Frame frate
+        			<input type="number" name="SaveRate" class="border-input" style= "color:black">			
+        		</label>
+          		
+        	</div>
+          
+          <button class="btn btn-primary btn-block btn-large">Convert </button>
+    </form>
+      </div>
+        </div>
+      </div>
+    </body>
+
+</html>
